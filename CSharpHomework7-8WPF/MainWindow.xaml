@@ -1,0 +1,30 @@
+﻿<Window x:Class="CSharpHomework7_8WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSharpHomework7_8WPF"
+        mc:Ignorable="d"
+        Title="APIRequestApp" Height="600" Width="1000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Grid.Column="0" ItemsSource="{Binding}" IsReadOnly="True" x:Name="EmployeeGrid">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="60" Binding="{Binding ID}" Header="ID" IsReadOnly="True"/>
+                <DataGridTextColumn Width="*" Binding="{Binding FirstName}" Header="FirstName" IsReadOnly="True"/>
+                <DataGridTextColumn Width="*" Binding="{Binding LastName}" Header="LastName" IsReadOnly="True"/>
+                <DataGridTextColumn Width="60" Binding="{Binding Age}" Header="Age" IsReadOnly="True"/>
+                <DataGridTextColumn Width="*" Binding="{Binding Department}" Header="Department" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Grid.Column="1" ItemsSource="{Binding}" IsReadOnly="True" x:Name="DepartmentGrid">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="60" Binding="{Binding ID}" Header="ID" IsReadOnly="True"/>
+                <DataGridTextColumn Width="*" Binding="{Binding Name}" Header="Department" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
